@@ -1,0 +1,23 @@
+1. Jelaskan apa yang dimaksud dengan dokumen root ?
+Dokumen root merupkan direktori utama pada server web tempat file-file situs wes disimpan dan diakses oleh pengguna melalui browser atau singkatnya adalah lokasi penyimpanan atau folder utama file websita di server.
+
+2. Pada apache web server, apakah dokumen root harus terletak dalam direktori C:\xampp\htdocs ? Jelaskan jawaban anda
+Dokumen root tidak harus terletak dalam direktori C:\xampp\htdocs, beberapa mungkin menyimpannya dalam direktori lain, misalnya ke D:/project/website. pada apache web server meletakkan dokumen root pada direktori C:\xampp\htdocs merupakan langkah yang memudahkan pengguna.
+
+3. Jelaskan apa yang dimaksud dengan perintah git : init, clone, remote, add, commit, push dan checkout
+Git init : untuk membuat repositori baru
+Git clone : untuk checkout repositori
+Git remote : akan membuat user terhubung ke remote repository
+Git add : untuk menambahkan file ke index
+Git commit : untuk melakukan commit pada perubahan judul
+Git push : adalah perintah git dasar lainnya. git push akan mengirimkan perubahan ke master branch dari remote repository yang berhubungan dengan direktori kerjanya.
+Git checkout : untuk membuat branch atau untuk berpindah branch
+
+4. Jelaskan perbedaan antara GitHub dan GitLab
+Github merupakan platform kolaborasi yang membantu meninjau dan mengelola kode dari jarak jauh dengan antarmuka sederhana dan mudah sedangkan gitlab lebih fokus pada DevOps dan CI/CD. GitHub lebih populer di kalangan pengembang karena menampung jutaan repositori, tetapi baru-baru ini GitLab semakin populer, karena perusahaan terus menambahkan fitur baru untuk membuatnya lebih kompetitif dan ramah pengguna
+
+5. Apa bedanya variable user dengan variable system?
+variable user dibuat oleh pengguna dan biasanya berisi informasi tentang user atau pengguna nya sedangkan variable system sudah disediakkan oleh sistem dan berisi data tentang dokumen root pengguna
+
+6. Apa persamaan variable system dengan variable constant?
+keduanya sama sama berfungsi untuk menyimpan suatu nilai. baik variable sistem maupun konstanta dapat menyimpan berbagai jenis data seperti angka, teks, boolean, array, bahkan objek.
