@@ -1,11 +1,9 @@
 <?php
-
 require_once 'config.php';
 
 class Connection 
 {
-    public static function make($host, $db, $user, $password)
-    {
+    public static function make($host, $db, $user, $password) {
         $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
         try {
