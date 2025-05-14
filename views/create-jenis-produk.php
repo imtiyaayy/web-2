@@ -1,3 +1,21 @@
+<?php
+require_once __DIR__ . '/../models/JenisProduk.php';
+
+use models\JenisProduk;
+
+
+if (isset($_POST['submit'])) {
+    $data = [
+        'nama' => $_POST['nama'],
+        'deskripsi' => $_POST['deskripsi'],
+    ];
+
+    JenisProduk::create($data);
+    header("Location: list-jenis-produk.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,28 +32,40 @@
 </head>
 
 <body class="sb-nav-fixed">
-    <!-- Navbar start-->
+    <!-- navbar start -->
     <?php include_once "navbar.php" ?>
-    <!-- Navbar End -->
+    <!-- navbar end -->
     <div id="layoutSidenav">
-        <!-- Sidebar start -->
+        <!-- sidebar start -->
         <?php include_once "sidebar.php" ?>
         <!-- sidebar end -->
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Dashboard</h1>
+                    <h1 class="mt-4">Tambah Jenis Produk</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="list-jenis-produk.php">Data Jenis Produk</a></li>
+                        <li class="breadcrumb-item"><a href="list-jenis-produk.php">Jenis Produk</a></li>
+                        <li class="breadcrumb-item active">Tambah Jenis Produk</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Dashboard
+                            Tambah Jenis Produk
                         </div>
                         <div class="card-body">
-                            <h1>THIS IS A DASHBOARD PAGE</h1>
-                            <p> Dashboard Pegawai <a href="list-pegawai.php">Here</a></p>
+                            <form action="create-jenis-produk.php" method="POST">
+                                <div class="mb-3">
+                                    <label for="nama" class="form-label">Jenis Produk</label>
+                                    <input type="text" class="form-control" id="nama" name="nama" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="deskripsi" class="form-label">Deskripsi</label>
+                                    <input type="text" class="form-control" id="deskripsi" name="deskripsi" required>
+
+                                <a href="list-jenis-produk.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                <button type="submit" name="submit" class="btn btn-primary"><i class="fas fa-save"></i>Simpan</button>
+                            </form>
                         </div>
                     </div>
                 </div>

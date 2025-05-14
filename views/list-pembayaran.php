@@ -1,10 +1,9 @@
 <?php
-require_once __DIR__ . '/../models/user.php';
+require_once __DIR__ . '/../models/Pembayaran.php';
 
-use models\user;
+use models\Pembayaran;
 
-$users = User::get();
-
+$pembayaran = Pembayaran::get();
 ?>
 
 <!DOCTYPE html>
@@ -16,66 +15,65 @@ $users = User::get();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Praktikum 06</title>
+    <title>Project 01</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="../public/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="sb-nav-fixed">
-    <!-- navbar -->
+    <!-- navbar start -->
     <?php include_once "navbar.php" ?>
+    <!-- navbar end -->
     <div id="layoutSidenav">
-        <!-- sidebar -->
+        <!-- sidebar start -->
         <?php include_once "sidebar.php" ?>
-        <!-- end sidebar -->
+        <!-- sidebar end -->
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">User</h1>
+                    <h1 class="mt-4">Pembayaran</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                        <li class="breadcrumb-item active">User</li>
+                        <li class="breadcrumb-item"><a href="list-transaksi.php">Pembayaran</a></li>
+                        <li class="breadcrumb-item active">Transaksi Pembayaran</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            List User
+                            Pembayaran
                         </div>
                         <div class="card-body">
                             <div class="mb-3 text-end">
-                                <a href="create-user.php" class="btn btn-success">
-                                    <i class="fas fa-plus"></i> Add User
+                                <a href="create-pembayaran.php" class="btn btn-success">
+                                    <i class="fa-solid fa-plus"></i> Tambah Transaksi
                                 </a>
                             </div>
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Gender</th>
+                                        <th>Jumlah Bayar</th>
+                                        <th>Tanggal</th>
+                                        <th>Pesanan</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($users as $index => $user) : ?>
+                                    <?php foreach ($pembayaran as $index => $pembayaran) : ?>
                                         <tr>
-                                            <td><?= $index + 1 ?></td>
-                                            <td><?= $user['firstname'] ?></td>
-                                            <td><?= $user['lastname'] ?></td>
-                                            <td><?= $user['gender'] ?></td>
+                                            <td><?= $index + 1; ?></td>
+                                            <td><?= $pembayaran['jumlah_bayar'] ?></td>
+                                            <td><?= $pembayaran['tanggal'] ?></td>
+                                            <td><?= $pembayaran['pesanan_id'] ?></td>
                                             <td>
-                                                <a href="detail-user.php?id=<?= $user['id'] ?>" class="btn btn-primary">
+                                                <a href="detail-pembayaran.php?id=<?= $pembayaran['id'] ?>" class="btn btn-primary">
                                                     <i class="fas fa-eye"></i> Detail
                                                 </a>
-
-                                                <a href="edit-user.php?id=<?= $user['id'] ?>" class="btn btn-warning">
+                                                <a href="edit-pembayaran.php?id=<?= $pembayaran['id'] ?>" class="btn btn-warning">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </a>
-
-                                                <a href="delete-user.php?id=<?= $user['id'] ?>" class="btn btn-danger">
-                                                    <i class="fas fa-trash"></i> Delete
+                                                <a href="delete-pembayaran.php?id=<?= $pembayaran['id'] ?>" class="btn btn-danger">
+                                                    <i class="fas fa-trash"></i> Hapus
                                                 </a>
                                             </td>
                                         </tr>
@@ -86,9 +84,9 @@ $users = User::get();
                     </div>
                 </div>
             </main>
-            <!-- footer -->
+            <!-- footer start --> 
             <?php include_once "footer.php" ?>
-            <!-- end footer -->
+            <!-- footer end -->
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
